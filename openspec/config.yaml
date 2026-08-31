@@ -1,0 +1,45 @@
+# SDD configuration for AgendaVirtual-LAG
+artifact_store: both
+execution_mode: interactive
+delivery_strategy: ask-on-risk
+review_budget:
+  changed_lines_per_pr: 300
+strict_tdd: true
+project:
+  name: AgendaVirtual-LAG
+  memory_project: agendavirtual-lag
+  description: >-
+    Locally hosted VPS reimplementation of the existing serverless
+    school-management application.
+stack:
+  package_manager: pnpm
+  monorepo:
+    - apps/frontend
+    - apps/gateway
+    - db
+    - docker
+  frontend: React + Vite + TypeScript
+  gateway: Node + TypeScript API gateway
+  database: PostgreSQL via supabase/postgres Docker image
+  orchestration: Docker Compose
+  status: target; scaffold not yet implemented
+testing:
+  status: target; no package.json or test commands detected yet
+  frontend_unit: Vitest
+  frontend_e2e: Playwright
+  gateway: Vitest or node:test
+  strict_tdd_evidence_required: true
+phase_rules:
+  init:
+    inspect_stack_and_conventions: true
+    create_missing_openspec_config: true
+  propose:
+    require_tests_first: true
+  apply:
+    require_tests_before_implementation: true
+    do_not_skip_tests: true
+  verify:
+    require_test_execution: true
+    report_undetectable_commands: true
+  review:
+    delivery_strategy: ask-on-risk
