@@ -55,11 +55,11 @@ The migration already has decisions, a phase backlog and an activation scope, bu
 
 ## Delivery plan
 - Strategy: single documentation slice, no chain required (369 lines total across 7 files, all additive).
-- Committed as `docs(sena): add requirements analysis and ODD task doc` and pushed to `origin/master`; no PR was opened.
+- Committed as `ee56271` (`docs(sena): add requirements analysis baseline and ODD task doc`) and pushed to `origin/master`; no PR was opened.
 - Engram mirror under topic `odd/analisis-levantamiento-requisitos/tasks`.
 
 ## Remote delivery status
-- Pushed to `origin/master`. No remote PR or issue exists for this unit.
+- Commit `ee56271` pushed to `origin/master`. No remote PR or issue exists for this unit.
 
 ## Checklist and progress
 - [x] A1 — Elicit actors and role/permission matrix from role-gated routes and `profiles.rol`.
